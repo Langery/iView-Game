@@ -14,7 +14,7 @@ module.exports = {
   productionSourceMap: true, // 生产环境下css 分离文件
   devServer: { // 配置服务器
     port: 8077,
-    open: true,
+    open: false,
     https: false,
     overlay: {
       warnings: true,
