@@ -10,7 +10,12 @@
 > note
 
 &ensp;记录开发过程中存在的问题和一些细节点
-1. 主体界面配置文件位置：`public/index.html`
+1. 主体界面配置文件位置：`public/index.html`；
+2. `App.vue`文件中，`router-link`为界面路由，`router-view`为视图展示；
+3. 取消鼠标右键默认菜单：
+``` javascript
+  e.preventDefault()
+```
 
 > idea
 
@@ -21,3 +26,6 @@
 - [ ] 鼠标右键扩展功能
 - [ ] 待续...
 
+> finish
+
+- [x] 获取到当前鼠标浏览器位置，并取消默认右键属性
