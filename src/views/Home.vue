@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <right-tool></right-tool>
   </div>
 </template>
 
@@ -14,17 +14,22 @@ export default {
       mouseY: 0
     }
   },
+  components: {
+    'RightTool': () => import('@/views/components/rightTool')
+  },
   mounted () {
-    document.oncontextmenu = (e) => {
-      var e = event || window.event
-      e.preventDefault()
-      this.mouseX = e.clientX
-      this.mouseY = e.clientY
-      console.log(e.clientX, e.clientY)
-      // console.log('鼠标右键点击~')
-    }
+    this.rightMouse()
   },
   methods: {
+    rightMouse () {
+      document.oncontextmenu = (e) => {
+        var e = event || window.event
+        e.preventDefault()
+        this.mouseX = e.clientX
+        this.mouseY = e.clientY
+        console.log(e.clientX, e.clientY)
+      }
+    }
   }
 }
 </script>
