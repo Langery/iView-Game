@@ -6,6 +6,8 @@
 
 1. 启动：npm run serve
 2. 更新为新版本Vue(3.7.0)
+~~3. 介于目前单位在使用 [`D3.js`](https://d3js.org/) 框架，所以目前的动画视图也使用 D3 来实现~~
+3. 一开始考虑使用 D3 框架，后来打算使用 [`Three.js`](https://threejs.org/) 框架实现视图渲染 
 
 > note
 
@@ -34,3 +36,21 @@
 > finish
 
 - [x] 获取到当前鼠标浏览器位置，并取消默认右键属性
+
+> Three.js 使用笔记
+
+1. 安装
+``` node
+  $ npm install three --save
+```
+
+> D3.js 使用笔记
+
+1. 安装
+``` node
+  $ npm install d3 --save-dev
+```
+2. 引入
+``` javascript
+  import * as d3 from 'd3'
+```
