@@ -2,42 +2,33 @@
   <div class="home">
     <right-tool></right-tool>
     <Layout>
-      <Header>
-        <menu-top></menu-top>
-      </Header>
+      <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
+        <i-menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
+          <MenuItem name="1-1">
+            <Icon type="ios-navigate"></Icon>
+            <span>Option 1</span>
+          </MenuItem>
+          <MenuItem name="1-2">
+            <Icon type="ios-search"></Icon>
+            <span>Option 2</span>
+          </MenuItem>
+          <MenuItem name="1-3">
+            <Icon type="ios-settings"></Icon>
+            <span>Option 3</span>
+          </MenuItem>
+        </i-menu>
+      </Sider>
       <Layout>
-        <Sider hide-trigger :style="{background: '#fff'}">
-          <i-menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
-            <Submenu name="1">
-              <template slot="title">
-                <Icon type="ios-navigate"></Icon>
-                Item 1
-              </template>
-              <MenuItem name="1-1">Option 1</MenuItem>
-            </Submenu>
-            <Submenu name="2">
-              <template slot="title">
-                <Icon type="ios-keypad"></Icon>
-                Item 2
-              </template>
-              <MenuItem name="2-1">Option 1</MenuItem>
-            </Submenu>
-            <Submenu name="3">
-              <template slot="title">
-                <Icon type="ios-analytics"></Icon>
-                Item 3
-              </template>
-              <MenuItem name="3-1">Option 1</MenuItem>
-            </Submenu>
-          </i-menu>
-        </Sider>
-        <Layout :style="{padding: '0 24px 24px'}">
-          <Content :style="{padding: '24px', minHeight: '280px', background: '#fff', marginTop: '24px'}">
+        <Header :style="{padding: 0}" class="layout-header-bar">
+          <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '15px 20px', float: 'left'}" type="md-menu" size="24"></Icon>
+          <menu-top></menu-top>
+        </Header>
+        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff', marginTop: '24px'}">
           <!-- 2D 视图 -->
-          </Content>
-        </Layout>
+        </Content>
       </Layout>
     </Layout>
+
   </div>
 </template>
 
@@ -48,17 +39,36 @@ export default {
   data () {
     return {
       mouseX: 0,
-      mouseY: 0
+      mouseY: 0,
+      isCollapsed: false
     }
   },
   components: {
     'RightTool': () => import('@/views/components/rightTool'),
-    'MenuTop': () => import('@/views/components/menu')
+    'MenuTop': () => import('@/views/components/menuTop')
+  },
+  computed: {
+    rotateIcon () {
+      return [
+        'menu-icon',
+        this.isCollapsed ? 'rotate-icon' : ''
+      ]
+    },
+    menuitemClasses () {
+      return [
+        'menu-item',
+        this.isCollapsed ? 'collapsed-menu' : ''
+      ]
+    }
   },
   mounted () {
     this.rightMouse()
   },
   methods: {
+    collapsedSider () {
+      // console.log(this.$refs)
+      this.$refs.side1.toggleCollapse()
+    },
     rightMouse () {
       document.oncontextmenu = (e) => {
         var e = event || window.event
@@ -80,14 +90,46 @@ export default {
   border-radius: 4px;
   overflow: hidden;
 }
-.layout-logo{
-  width: 100px;
+.layout-header-bar{
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+.layout-logo-left{
+  width: 90%;
   height: 30px;
   background: #5b6270;
   border-radius: 3px;
-  float: left;
-  position: relative;
-  top: 15px;
-  left: 20px;
+  margin: 15px auto;
+}
+.menu-icon{
+  transition: all .3s;
+}
+.rotate-icon{
+  transform: rotate(-90deg);
+}
+.menu-item span{
+  display: inline-block;
+  overflow: hidden;
+  width: 69px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+  transition: width .2s ease .2s;
+}
+.menu-item i{
+  transform: translateX(0px);
+  transition: font-size .2s ease, transform .2s ease;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.collapsed-menu span{
+  width: 0px;
+  transition: width .2s ease;
+}
+.collapsed-menu i{
+  transform: translateX(5px);
+  transition: font-size .2s ease .2s, transform .2s ease .2s;
+  vertical-align: middle;
+  font-size: 22px;
 }
 </style>
