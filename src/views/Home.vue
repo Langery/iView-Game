@@ -1,30 +1,26 @@
 <template>
   <div class="home">
-    <right-tool></right-tool>
-    <Layout>
-      <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
-        <i-menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
-          <MenuItem name="1-1">
-            <Icon type="ios-navigate"></Icon>
-            <span>Option 1</span>
-          </MenuItem>
-          <MenuItem name="1-2">
-            <Icon type="ios-search"></Icon>
-            <span>Option 2</span>
-          </MenuItem>
-          <MenuItem name="1-3">
-            <Icon type="ios-settings"></Icon>
-            <span>Option 3</span>
+    <Layout :style="{height: '90vh'}">
+      <Sider breakpoint="md" ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
+        <i-menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses">
+          <MenuItem
+            v-for="(item, index) in leftMap"
+            :key="index"
+            :name="item.name"
+          >
+            <Icon :type="item.type"></Icon>
+            <span>{{item.span}}</span>
           </MenuItem>
         </i-menu>
       </Sider>
       <Layout>
-        <Header :style="{padding: 0}" class="layout-header-bar">
+        <Header breakpoint :style="{padding: 0}" class="layout-header-bar">
           <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '15px 20px', float: 'left'}" type="md-menu" size="24"></Icon>
           <menu-top></menu-top>
         </Header>
-        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff', marginTop: '24px'}">
+        <Content :style="{margin: '24px 4%', padding: '24px', minHeight: '280px', background: '#fff'}">
           <!-- 2D 视图 -->
+          <right-tool></right-tool>
         </Content>
       </Layout>
     </Layout>
@@ -40,7 +36,24 @@ export default {
     return {
       mouseX: 0,
       mouseY: 0,
-      isCollapsed: false
+      isCollapsed: false,
+      leftMap: [
+        {
+          name: '1-1',
+          type: 'ios-navigate',
+          span: 'Option 1'
+        },
+        {
+          name: '1-2',
+          type: 'ios-search',
+          span: 'Option 2'
+        },
+        {
+          name: '1-3',
+          type: 'ios-settings',
+          span: 'Option 3'
+        }
+      ]
     }
   },
   components: {
@@ -66,7 +79,6 @@ export default {
   },
   methods: {
     collapsedSider () {
-      // console.log(this.$refs)
       this.$refs.side1.toggleCollapse()
     },
     rightMouse () {

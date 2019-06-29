@@ -7,7 +7,7 @@
         :name=item.name
         >
         <Icon :type=item.type></Icon>
-        {{item.way}}
+        <span>{{item.way}}</span>
       </MenuItem>
     </div>
   </i-menu>

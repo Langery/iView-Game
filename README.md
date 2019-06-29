@@ -8,6 +8,7 @@
 2. 更新为新版本Vue(3.7.0)<br/>
 ~~3. 介于目前单位在使用 [`D3.js`](https://d3js.org/) 框架，所以目前的动画视图也使用 D3 来实现~~
 3. 一开始考虑使用 D3 框架，后来打算使用 [`Three.js`](https://threejs.org/) 框架实现视图渲染
+4. 对于右键扩展功能考虑使用 [`Echart.js`](https://echarts.baidu.com/index.html)
 
 > note
 
@@ -19,6 +20,10 @@
   e.preventDefault()
 ```
 4. 所有的数据通过 map 做循环渲染，后期所有的 map 都存入到数据库中
+5. 饼状图相关资料：
+    a. [Echarts饼状图属性设置大全](https://blog.csdn.net/sleepwalker_1992/article/details/82532210)
+    b. [Echarts 基本设置 设置图表位置](https://www.jianshu.com/p/3cf80b96a65d)
+    c. [Echarts饼状图详解及示例](https://blog.csdn.net/qq_21386275/article/details/78842286)
 
 > idea
 
@@ -27,13 +32,15 @@
 - [ ] 尝试做一下动画界面，后期做一些关于OO的配置
 - [x] 主要还是依赖于Vue实现框架的搭建
 - [ ] 鼠标右键扩展功能
-- [ ] 鼠标右键可考虑EchartJS来实现
+- [x] 鼠标右键可考虑EchartJS来实现
 - [ ] 亦或通过css3实现相关动态效果
 - [ ] 待续...
 
 > ongoing
 
-- 鼠标右键设置为子菜单做单独处理
+- [x] 双层饼状图已实现
+- [ ] 当鼠标浮动到指定一层饼状图才显示对应二层饼状图
+- [ ] 鼠标右键设置为子菜单并做单独处理
 
 > finish
 
@@ -46,7 +53,18 @@
   $ npm install three --save
 ```
 
-> D3.js 使用笔记
+> Echart.js 使用笔记
+
+1. 安装
+``` node
+  npm install echarts --save
+```
+2. 引入
+``` javascript
+  import echarts from 'echarts'
+```
+
+> ~~D3.js 使用笔记~~ 已弃用
 
 1. 安装
 ``` node
