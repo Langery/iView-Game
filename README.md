@@ -20,10 +20,10 @@
   e.preventDefault()
 ```
 4. 所有的数据通过 map 做循环渲染，后期所有的 map 都存入到数据库中
-5. 饼状图相关资料：
-    a. [Echarts饼状图属性设置大全](https://blog.csdn.net/sleepwalker_1992/article/details/82532210)
-    b. [Echarts 基本设置 设置图表位置](https://www.jianshu.com/p/3cf80b96a65d)
-    c. [Echarts饼状图详解及示例](https://blog.csdn.net/qq_21386275/article/details/78842286)
+5. 饼状图相关资料：<br />
+  a. [Echarts饼状图属性设置大全](https://blog.csdn.net/sleepwalker_1992/article/details/82532210)<br />
+  b. [Echarts 基本设置 设置图表位置](https://www.jianshu.com/p/3cf80b96a65d)<br />
+  c. [Echarts饼状图详解及示例](https://blog.csdn.net/qq_21386275/article/details/78842286)<br />
 
 > idea
 
