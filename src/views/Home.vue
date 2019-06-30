@@ -20,7 +20,10 @@
         </Header>
         <Content :style="{margin: '24px 4%', padding: '24px', minHeight: '280px', background: '#fff'}">
           <!-- 2D 视图 -->
-          <right-tool></right-tool>
+          <right-tool
+            :style="rightStyle"
+            v-show="isRight"
+          ></right-tool>
         </Content>
       </Layout>
     </Layout>
@@ -34,6 +37,12 @@ export default {
   name: 'home',
   data () {
     return {
+      rightStyle: {
+        position: 'absolute',
+        top: '0px',
+        left: '0px'
+      },
+      isRight: false,
       mouseX: 0,
       mouseY: 0,
       isCollapsed: false,
@@ -88,6 +97,13 @@ export default {
         this.mouseX = e.clientX
         this.mouseY = e.clientY
         console.log(e.clientX, e.clientY)
+        // 需要同时修改 rightTool.vue 中的位置
+        this.rightStyle.left = (e.clientX - 125) + 'px'
+        this.rightStyle.top = (e.clientY - 125) + 'px'
+        this.isRight = true
+      }
+      document.onclick = (e) => {
+        this.isRight = false
       }
     }
   }
