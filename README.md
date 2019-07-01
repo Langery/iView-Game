@@ -4,7 +4,10 @@
 
 > 框架 vue-3.7.0
 
-1. 启动：npm run serve
+1. 启动项目：<br/>  
+  a. 下载项目到本地 <br />
+  b. npm install <br />
+  c. npm run serve <br />
 2. 更新为新版本Vue(3.7.0)<br/>
 ~~3. 介于目前单位在使用 [`D3.js`](https://d3js.org/) 框架，所以目前的动画视图也使用 D3 来实现~~
 3. 一开始考虑使用 D3 框架，后来打算使用 [`Three.js`](https://threejs.org/) 框架实现视图渲染
@@ -33,20 +36,23 @@
 - [x] 主要还是依赖于Vue实现框架的搭建
 - [x] 鼠标右键扩展功能
 - [x] 鼠标右键可考虑EchartJS来实现
+- [ ] 画板区域及功能
 - [ ] 亦或通过css3实现相关动态效果
 - [ ] 待续...
 
-> ongoing
+> ongoing or aim
 
 - [x] 双层饼状图已实现
 - [ ] 当鼠标浮动到指定一层饼状图才显示对应二层饼状图
   - [ ] 目前已实现相关静态显示，需考虑相关事件的触发
 - [x] 鼠标右键设置为子菜单并做单独处理
+  - [ ] 右键功能划分
   - [ ] 未做右键数据预加载
 
 > finish
 
 - [x] 获取到当前鼠标浏览器位置，并取消默认右键属性
+- [x] 鼠标右键出现功能区选择
 
 > optimization
 
@@ -57,6 +63,10 @@
 1. 安装
 ``` node
   $ npm install three --save
+```
+2. 引入
+``` javascript
+  import * as Three from 'three'
 ```
 
 > Echart.js 使用笔记

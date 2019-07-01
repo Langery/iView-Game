@@ -19,11 +19,14 @@
           <menu-top></menu-top>
         </Header>
         <Content :style="{margin: '24px 4%', padding: '24px', minHeight: '280px', background: '#fff'}">
-          <!-- 2D 视图 -->
+          <!-- 鼠标右键功能区 -->
           <right-tool
             :style="rightStyle"
             v-show="isRight"
           ></right-tool>
+          <!-- 参数区 -->
+          <!-- 2D 视图 -->
+          <draw-board></draw-board>
         </Content>
       </Layout>
     </Layout>
@@ -50,24 +53,25 @@ export default {
         {
           name: '1-1',
           type: 'ios-navigate',
-          span: 'Option 1'
+          span: '画板'
         },
         {
           name: '1-2',
           type: 'ios-search',
-          span: 'Option 2'
+          span: '图库'
         },
         {
           name: '1-3',
           type: 'ios-settings',
-          span: 'Option 3'
+          span: '我的'
         }
       ]
     }
   },
   components: {
     'RightTool': () => import('@/views/components/rightTool'),
-    'MenuTop': () => import('@/views/components/menuTop')
+    'MenuTop': () => import('@/views/components/menuTop'),
+    'DrawBoard': () => import('@/views/components/drawBoard')
   },
   computed: {
     rotateIcon () {
