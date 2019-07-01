@@ -18,15 +18,20 @@
           <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '15px 20px', float: 'left'}" type="md-menu" size="24"></Icon>
           <menu-top></menu-top>
         </Header>
-        <Content :style="{margin: '24px 4%', padding: '24px', minHeight: '280px', background: '#fff'}">
+        <!-- 参数区 -->
+        <paramet-data></paramet-data>
+        <Content :style="{margin: '0 4% 24px', padding: '24px', minHeight: '280px', background: '#fff', position: 'relative'}">
           <!-- 鼠标右键功能区 -->
           <right-tool
             :style="rightStyle"
             v-show="isRight"
-          ></right-tool>
-          <!-- 参数区 -->
+          >
+          </right-tool>
           <!-- 2D 视图 -->
-          <draw-board></draw-board>
+          <draw-board1
+            :style="{position: 'absolute', top: '0', left: '0'}"
+          >
+          </draw-board1>
         </Content>
       </Layout>
     </Layout>
@@ -71,7 +76,8 @@ export default {
   components: {
     'RightTool': () => import('@/views/components/rightTool'),
     'MenuTop': () => import('@/views/components/menuTop'),
-    'DrawBoard': () => import('@/views/components/drawBoard')
+    'ParametData': () => import('@/views/components/parametData'),
+    'DrawBoard1': () => import('@/views/components/drawBoard1')
   },
   computed: {
     rotateIcon () {
@@ -100,15 +106,14 @@ export default {
         e.preventDefault()
         this.mouseX = e.clientX
         this.mouseY = e.clientY
-        console.log(e.clientX, e.clientY)
+        // console.log(e.clientX, e.clientY)
         // 需要同时修改 rightTool.vue 中的位置
-        this.rightStyle.left = (e.clientX - 125) + 'px'
-        this.rightStyle.top = (e.clientY - 125) + 'px'
+        // 同时减去部分 canvas 的位置距离
+        this.rightStyle.left = (e.clientX - 125 - 250) + 'px'
+        this.rightStyle.top = (e.clientY - 125 - 170) + 'px'
         this.isRight = true
       }
-      document.onclick = (e) => {
-        this.isRight = false
-      }
+      document.onclick = (e) => { this.isRight = false }
     }
   }
 }

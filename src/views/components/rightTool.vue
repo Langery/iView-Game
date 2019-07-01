@@ -109,6 +109,7 @@ export default {
   display: inline-block;
   width: 250px;
   height: 250px;
+  z-index: 1000;
   // background-color: antiquewhite;
 }
 .pie-main{
