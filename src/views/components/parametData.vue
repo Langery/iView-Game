@@ -7,6 +7,9 @@
     <div class="input-box">
       y: <Input size="small" v-model="valueY" placeholder="Enter something..." style="width: 50px" :readonly=true />
     </div>
+    <div class="input-box">
+      <Button size="small" icon="ios-refresh" @click="resetFun">Reset</Button>
+    </div>
   </div>
 </template>
 
@@ -26,6 +29,12 @@ export default {
       this.valueX = x
       this.valueY = y
     })
+  },
+  methods: {
+    resetFun () {
+      const reset = true
+      Bus.$emit('reset', reset)
+    }
   }
 }
 </script>
