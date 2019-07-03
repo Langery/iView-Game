@@ -13,12 +13,24 @@
           </MenuItem>
         </i-menu>
       </Sider>
-      <Layout>
+      <Layout style="position: relative">
         <Header breakpoint :style="{padding: 0}" class="layout-header-bar">
           <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '15px 20px', float: 'left'}" type="md-menu" size="24"></Icon>
           <menu-top></menu-top>
         </Header>
         <!-- 参数区 -->
+        <div class="drawer">
+          <Button icon="ios-list-box" @click="drawerVal = true" size="small" title="工具栏"></Button>
+        </div>
+        <div class="detail-info">
+          <Button icon="ios-list-box-outline" @click="inforVal = true" size="small" title="详细信息"></Button>
+        </div>
+        <Drawer title="工具栏" placement="left" :closable="false" v-model="drawerVal" width="300">
+          <drawer-tool></drawer-tool>
+        </Drawer>
+        <Drawer title="详细信息" :closable="false" width="640" v-model="inforVal">
+          <detail-info></detail-info>
+        </Drawer>
         <paramet-data></paramet-data>
         <Content :style="{margin: '0 4% 24px', padding: '24px', minHeight: '280px', background: '#fff', position: 'relative'}">
           <!-- 鼠标右键功能区 -->
@@ -45,6 +57,8 @@ export default {
   name: 'home',
   data () {
     return {
+      inforVal: false,
+      drawerVal: false,
       rightStyle: {
         position: 'absolute',
         top: '0px',
@@ -77,7 +91,9 @@ export default {
     'RightTool': () => import('@/views/components/rightTool'),
     'MenuTop': () => import('@/views/components/menuTop'),
     'ParametData': () => import('@/views/components/parametData'),
-    'DrawBoard1': () => import('@/views/components/drawBoard1')
+    'DrawerTool': () => import('@/views/components/drawerTool'),
+    'DrawBoard1': () => import('@/views/components/drawBoard1'),
+    'DetailInfo': () => import('@/views/components/detailInfo')
   },
   computed: {
     rotateIcon () {
@@ -120,6 +136,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.drawer{
+  display: inline-block;
+  position: absolute;
+  top: 68px;
+  left: 16px;
+}
+.detail-info{
+  display: inline-block;
+  position: absolute;
+  top: 96px;
+  left: 16px;
+}
 .layout{
   border: 1px solid #d7dde4;
   background: #f5f7f9;

@@ -8,7 +8,7 @@
       y: <Input size="small" v-model="valueY" placeholder="Enter something..." style="width: 50px" :readonly=true />
     </div>
     <div class="input-box">
-      <Button size="small" icon="ios-refresh" @click="resetFun">Reset</Button>
+      <Button title="重置" size="small" icon="ios-refresh" @click="resetFun">Reset</Button>
     </div>
   </div>
 </template>
