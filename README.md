@@ -27,6 +27,7 @@
   a. [Echarts饼状图属性设置大全](https://blog.csdn.net/sleepwalker_1992/article/details/82532210)<br />
   b. [Echarts 基本设置 设置图表位置](https://www.jianshu.com/p/3cf80b96a65d)<br />
   c. [Echarts饼状图详解及示例](https://blog.csdn.net/qq_21386275/article/details/78842286)<br />
+6. iView Table 中显示 dot 的颜色有 success 和 error 两种
 
 > idea
 
