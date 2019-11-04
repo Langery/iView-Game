@@ -2,11 +2,12 @@
   <div class="home">
     <Layout :style="{height: '90vh'}">
       <Sider breakpoint="md" ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
-        <i-menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses">
+        <i-menu active-name="/" @on-select="turnUrl" theme="dark" width="auto" :class="menuitemClasses">
           <MenuItem
             v-for="(item, index) in leftMap"
             :key="index"
             :name="item.name"
+            :to="item.addr"
           >
             <Icon :type="item.type"></Icon>
             <span>{{item.span}}</span>
@@ -70,14 +71,16 @@ export default {
       isCollapsed: false,
       leftMap: [
         {
-          name: '1-1',
+          name: '/',
           type: 'ios-navigate',
-          span: '画板'
+          span: '画板',
+          addr: '/'
         },
         {
-          name: '1-2',
+          name: '/drawlib',
           type: 'ios-search',
-          span: '图库'
+          span: '图库',
+          addr: '/drawlib'
         },
         {
           name: '1-3',
@@ -113,6 +116,10 @@ export default {
     this.rightMouse()
   },
   methods: {
+    turnUrl (e) {
+      console.log(e)
+      this.$router.push(e)
+    },
     collapsedSider () {
       this.$refs.side1.toggleCollapse()
     },

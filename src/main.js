@@ -11,6 +11,12 @@ Vue.use(iView)
 Vue.use(Vuex)
 Vue.config.productionTip = false;
 
+// router.beforeEach((to, from, next) => {
+//   // console.log(to.meta.type)
+//   // const type = to.meta.type
+//   // console.log(type)
+// })
+
 new Vue({
   router,
   store,
