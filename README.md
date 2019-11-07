@@ -32,6 +32,22 @@
 8. render 事件处理 —— 在 Modal 中
     1. 可以添加表格信息的图标等样式操作
     2. 可用于添加点击事件，并通过 click 事件进行添加对应操作
+    ``` javascript
+      {
+        render: (h, params) => {
+          var params = params
+          return h('div', [
+            h('div', {
+              on: {
+                click: () => {
+                  ...
+                }
+              }
+            })
+          ])
+        }
+      }
+    ```
 
 > idea
 
