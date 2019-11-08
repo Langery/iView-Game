@@ -30,8 +30,8 @@
 6. iView Table 中显示 dot 的颜色有 success 和 error 两种
 7. Modal 中遮罩层和模态框移动不可共存
 8. render 事件处理 —— 在 Modal 中
-    1. 可以添加表格信息的图标等样式操作
-    2. 可用于添加点击事件，并通过 click 事件进行添加对应操作
+    - 可以添加表格信息的图标等样式操作
+    - 可用于添加点击事件，并通过 click 事件进行添加对应操作
     ``` javascript
       {
         render: (h, params) => {
@@ -48,7 +48,8 @@
         }
       }
     ```
-
+9. Table 问题
+    - 当做 checkbox 操作时可以通过在 data 中定义 checkbox 的 model 中的数据来控制默认显示的内容
 > idea
 
 - [ ] 全局动画，需要做到PC端与手机端适配（待定，主要先以PC为主吧）
@@ -83,6 +84,8 @@
 - [x] 左侧制作一个工具栏，用于操作，同时右侧为详细信息说明
 
 > canvas 笔记
+
+&emsp;&emsp;...待续
 
 > Three.js 使用笔记
 
