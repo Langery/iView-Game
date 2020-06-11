@@ -1,5 +1,6 @@
 <template>
-  
+  <div class="draw-main">
+  </div>
 </template>
 
 <script>

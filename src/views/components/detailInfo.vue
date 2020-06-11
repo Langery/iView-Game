@@ -37,7 +37,7 @@
             Position: Programmer
           </Col>
           <Col span="12">
-            Responsibilities:Coding
+            Responsibilities: Coding
           </Col>
         </Row>
         <Row>
@@ -71,6 +71,7 @@
 export default {
   data () {
     return {
+      // defined the style
       pStyle: {
         fontSize: '16px',
         color: 'rgba(0,0,0,0.85)',

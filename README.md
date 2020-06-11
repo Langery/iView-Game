@@ -17,7 +17,7 @@
 
 &ensp;记录开发过程中存在的问题和一些细节点
 1. 主体界面配置文件位置：`public/index.html`；
-2. `App.vue`文件中，`router-link`为界面路由，`router-view`为视图展示；
+2. `App.vue` 文件中，`router-link` 为界面路由，`router-view` 为视图展示；
 3. 取消鼠标右键默认菜单：
 ``` javascript
   e.preventDefault()
@@ -61,6 +61,7 @@
 - [ ] 画板区域及功能
 - [ ] 亦或通过css3实现相关动态效果
 - [ ] 绘制过程将以步骤条的形式进行，并可以随时返回到上一层
+- [ ] iview 组件拆分及函数功能指定细化
 - [ ] 待续...
 
 > ongoing or aim
@@ -83,11 +84,11 @@
 - [x] 鼠标右键出现功能区选择
 - [x] 左侧制作一个工具栏，用于操作，同时右侧为详细信息说明
 
-> canvas 笔记
+#### canvas 笔记
 
 &emsp;&emsp;...待续
 
-> Three.js 使用笔记
+#### Three.js 使用笔记
 
 1. 安装
 ``` node
@@ -98,7 +99,7 @@
   import * as Three from 'three'
 ```
 
-> Echart.js 使用笔记
+#### Echart.js 使用笔记
 
 1. 安装
 ``` node
@@ -109,11 +110,11 @@
   import echarts from 'echarts'
 ```
 
-> optimization
+#### optimization
 
 - [ ] Echart 加载速度需优化
 
-> ~~D3.js 使用笔记~~ 已弃用
+#### ~~D3.js 使用笔记~~ 已弃用
 
 1. 安装
 ``` node
