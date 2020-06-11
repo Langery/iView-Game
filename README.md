@@ -84,11 +84,11 @@
 - [x] 鼠标右键出现功能区选择
 - [x] 左侧制作一个工具栏，用于操作，同时右侧为详细信息说明
 
-#### canvas 笔记
+### canvas 笔记
 
 &emsp;&emsp;...待续
 
-#### Three.js 使用笔记
+### Three.js 使用笔记
 
 1. 安装
 ``` node
@@ -99,7 +99,7 @@
   import * as Three from 'three'
 ```
 
-#### Echart.js 使用笔记
+### Echart.js 使用笔记
 
 1. 安装
 ``` node
@@ -110,11 +110,11 @@
   import echarts from 'echarts'
 ```
 
-#### optimization
+### optimization
 
 - [ ] Echart 加载速度需优化
 
-#### ~~D3.js 使用笔记~~ 已弃用
+### ~~D3.js 使用笔记~~ 已弃用
 
 1. 安装
 ``` node
