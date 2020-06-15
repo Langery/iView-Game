@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <!-- 路由 -->
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>
-    </div>
+    </div> -->
     <!-- 视图渲染 -->
     <keep-alive>
       <router-view/>
