@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Draw from './views/draw/DrawMain.vue'
 
 Vue.use(Router);
 
@@ -12,7 +10,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: () => import('@/views/homemain/HomeMain.vue'),
       meta: {
         type: 'home',
         order: '1-1'
@@ -21,10 +19,19 @@ export default new Router({
     {
       path: '/drawlib',
       name: 'draw',
-      component: Draw,
+      component: () => import('@/views/draw/DrawMain.vue'),
       meta: {
         type: 'draw',
         order: '1-2'
+      }
+    },
+    {
+      path: '/me',
+      name: 'me',
+      component: () => import('@/views/me/me'),
+      meta: {
+        type: 'me',
+        ordre: '1-3'
       }
     }
   ],
