@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import Bus from '@/common/Bus'
+
 export default {
   components: {
     'RightTool': () => import('@/views/components/rightTool'),
@@ -73,7 +75,7 @@ export default {
   },
   methods: {
     collapsedSider () {
-      this.$refs.side1.toggleCollapse()
+      Bus.$emit('sideMenu', true)
     },
     rightMouse () {
       document.oncontextmenu = (e) => {

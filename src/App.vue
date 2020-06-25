@@ -12,6 +12,9 @@
 export default {
   components: {
     'Home': () => import('@/views/Home.vue')
+  },
+  watch () {
+
   }
 }
 </script>
