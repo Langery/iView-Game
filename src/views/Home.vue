@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Layout :style="{height: '100vh'}">
-      <Sider breakpoint="md" ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
+      <Sider breakpoint="md" ref="sideMenus" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
         <i-menu active-name="/" @on-select="turnUrl" theme="dark" width="auto" :class="menuitemClasses">
           <MenuItem
             v-for="(item, index) in leftMap"
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import Bus from '@/common/Bus'
 
 export default {
   name: 'home',
@@ -58,6 +59,9 @@ export default {
     }
   },
   mounted () {
+    Bus.$on('sideMenu', sideMenu => {
+      this.$refs.sideMenus.toggleCollapse()
+    })
   },
   methods: {
     turnUrl (e) {
