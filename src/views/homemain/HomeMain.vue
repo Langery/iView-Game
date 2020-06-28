@@ -77,8 +77,12 @@ export default {
     collapsedSider () {
       Bus.$emit('sideMenu', true)
     },
+    initRight () {
+      this.isRight = false
+    },
     rightMouse () {
       document.oncontextmenu = (e) => {
+        this.initRight()
         var e = event || window.event
         e.preventDefault()
         this.mouseX = e.clientX
@@ -87,10 +91,10 @@ export default {
         // 需要同时修改 rightTool.vue 中的位置
         // 同时减去部分 canvas 的位置距离
         this.rightStyle.left = (e.clientX - 125 - 250) + 'px'
-        this.rightStyle.top = (e.clientY - 125 - 170) + 'px'
+        this.rightStyle.top = (e.clientY - 50 - 170) + 'px'
         this.isRight = true
       }
-      document.onclick = (e) => { this.isRight = false }
+      document.onclick = (e) => { this.initRight() }
     }
   }
 }

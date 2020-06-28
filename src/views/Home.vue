@@ -65,7 +65,6 @@ export default {
   },
   methods: {
     turnUrl (e) {
-      console.log(e)
       this.$router.push(e)
     }
   }

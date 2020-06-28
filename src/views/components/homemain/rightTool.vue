@@ -15,28 +15,51 @@ export default {
         {value:100, name: 'one'},
         {value:100, name: 'two'},
         {value:100, name: 'three'}
+      ],
+      opinionSonData: [
+        { value: 40 },
+        { value: 50 },
+        { value: 10 },
+        { value: 20 },
+        { value: 30 },
+        { value: 50 },
+        { value: 20 },
+        { value: 20 },
+        { value: 60 }
       ]
     }
   },
   created () {
+    // this.$nextTick(() => {
+    //   this.initData()
+    // })
+  },
+  mounted () {
     this.$nextTick(() => {
-      this.initData('main')
+      this.initData()
     })
   },
   methods: {
-    initData (id) {
+    initData (id = 'main') {
       this.charts = echarts.init(document.getElementById(id))
       console.log(this.charts)
       this.charts.setOption({
+        // 标题
+        title: {
+        },
         // 提示框
         tooltip: {
           trigger: 'item',
+          showDelay: 20, // 显示延迟
+          hideDelay: 20, // 隐藏延迟
         },
+        // 值域
         series: [
           { // 内圈
             // name: '饼状图', // tooltip 提示框显示内容
-            type:'pie',
-            radius:['20%','45%'], // [内圆半径， 外圆半径]
+            type: 'pie',
+            radius: ['20%', '45%'], // 环形饼状图 [内圆半径， 外圆半径]
+            center: ['50%', '50%'], // 饼状图
             avoidLabelOverlap: true,
             animation: false, // 悬浮动画效果
             label: { // 图例设置
@@ -80,24 +103,20 @@ export default {
                 show: false,
               }
             },
-            data:[
-              { value: 40 },
-              { value: 50 },
-              { value: 10 },
-              { value: 20 },
-              { value: 30 },
-              { value: 50 },
-              { value: 20 },
-              { value: 20 },
-              { value: 60 }
-            ],
+            data: this.opinionSonData,
             color:['#51CEC6','#6AE2D9','#96F5EF','#EF87C2','#F79DD0','#FFC8E7','#FFB703','#FFCD50','#FFE296']
           }
         ]
       })
       this.charts.on('click', (params) => {
         console.log(params)
-        console.log(params.seriesIndex)
+        if (params.seriesIndex == 0) {
+          // 内层
+          // write click function
+        } else if (params.seriesIndex == 1) {
+          // 外层
+          // write click function
+        }
       })
     }
   }
