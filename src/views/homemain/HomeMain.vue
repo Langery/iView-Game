@@ -27,10 +27,10 @@
         >
         </right-tool>
         <!-- 2D 视图 -->
-        <draw-board1
+        <draw-board
           :style="{position: 'absolute', top: '0', left: '0'}"
         >
-        </draw-board1>
+        </draw-board>
       </Content>
     </Layout>
   </div>
@@ -41,12 +41,12 @@ import Bus from '@/common/Bus'
 
 export default {
   components: {
-    'RightTool': () => import('@/views/components/rightTool'),
-    'MenuTop': () => import('@/views/components/menuTop'),
-    'ParametData': () => import('@/views/components/parametData'),
-    'DrawerTool': () => import('@/views/components/drawerTool'),
-    'DrawBoard1': () => import('@/views/components/drawBoard1'),
-    'DetailInfo': () => import('@/views/components/detailInfo')
+    'RightTool': () => import('@/views/components/homemain/rightTool'),
+    'MenuTop': () => import('@/views/components/homemain/menuTop'),
+    'ParametData': () => import('@/views/components/homemain/parametData'),
+    'DrawerTool': () => import('@/views/components/homemain/drawerTool'),
+    'DrawBoard': () => import('@/views/components/homemain/drawBoard'),
+    'DetailInfo': () => import('@/views/components/homemain/detailInfo')
   },
   data () {
     return {

@@ -8,7 +8,8 @@
 export default {
   name: 'draw',
   data () {
-    return {}
+    return {
+    }
   }
 }
 </script>
