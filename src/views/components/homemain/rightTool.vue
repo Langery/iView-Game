@@ -17,16 +17,17 @@ export default {
         {value:100, name: 'three'}
       ],
       opinionSonData: [
-        { value: 40 },
-        { value: 50 },
-        { value: 10 },
-        { value: 20 },
-        { value: 30 },
-        { value: 50 },
-        { value: 20 },
-        { value: 20 },
-        { value: 60 }
-      ]
+        { value: 40, name: 'a' },
+        { value: 50, name: 'b' },
+        { value: 10, name: 'c' },
+        { value: 20, name: 'd' },
+        { value: 30, name: 'e' },
+        { value: 20, name: 'f' },
+        { value: 50, name: 'g' },
+        { value: 20, name: 'h' },
+        { value: 60, name: 'i' }
+      ],
+      colorList: ['#51CEC6','#6AE2D9','#96F5EF','#EF87C2','#F79DD0','#FFC8E7','#FFB703','#FFCD50','#FFE296']
     }
   },
   created () {
@@ -104,7 +105,7 @@ export default {
               }
             },
             data: this.opinionSonData,
-            color:['#51CEC6','#6AE2D9','#96F5EF','#EF87C2','#F79DD0','#FFC8E7','#FFB703','#FFCD50','#FFE296']
+            color: this.colorList
           }
         ]
       })

@@ -1,4 +1,4 @@
-# iView-Game
+  # iView-Game
 
 &emsp;想无聊的时候自己写一个游戏，目前是想基于[iView](https://www.iviewui.com/)写一个游戏。
 
@@ -70,7 +70,7 @@
 - [x] 二维视图使用 canvas 实现，三维视图使用 Three.JS 实现
   - [x] canvas 画板实现问题
   - [x] 当鼠标移出绘图区域数据消失
-  - [ ] canvas 功能实现问题 
+  - [ ] canvas 功能实现问题
 - [x] 鼠标右键设置为子菜单并做单独处理
   - [x] 双层饼状图已实现
   - [x] 右键方法预设
@@ -126,3 +126,7 @@
 ``` javascript
   import * as d3 from 'd3'
 ```
+
+### Link
+
+1. [Echarts饼状图属性设置大全](https://blog.csdn.net/sleepwalker_1992/article/details/82532210)
