@@ -17,12 +17,21 @@ export default new Router({
       }
     },
     {
-      path: '/drawlib',
-      name: 'draw',
-      component: () => import('@/views/draw/DrawMain.vue'),
+      path: '/modal',
+      name: 'modal',
+      component: () => import('@/views/modal/ModalMain.vue'),
       meta: {
-        type: 'draw',
-        order: '1-2'
+        type: 'modal',
+        order: '1-3'
+      }
+    },
+    {
+      path: '/drawlib',
+      name: 'drawlib',
+      component: () => import('@/views/drawlib/DrawMain.vue'),
+      meta: {
+        type: 'drawlib',
+        order: '1-3'
       }
     },
     {

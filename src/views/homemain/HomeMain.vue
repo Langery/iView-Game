@@ -41,12 +41,12 @@ import Bus from '@/common/Bus'
 
 export default {
   components: {
-    'RightTool': () => import('@/views/components/homemain/rightTool'),
-    'MenuTop': () => import('@/views/components/homemain/menuTop'),
-    'ParametData': () => import('@/views/components/homemain/parametData'),
-    'DrawerTool': () => import('@/views/components/homemain/drawerTool'),
-    'DrawBoard': () => import('@/views/components/homemain/drawBoard'),
-    'DetailInfo': () => import('@/views/components/homemain/detailInfo')
+    'RightTool': () => import('@/views/homemain/components/rightTool'),
+    'MenuTop': () => import('@/views/homemain/components/menuTop'),
+    'ParametData': () => import('@/views/homemain/components/parametData'),
+    'DrawerTool': () => import('@/views/homemain/components/drawerTool'),
+    'DrawBoard': () => import('@/views/homemain/components/drawBoard'),
+    'DetailInfo': () => import('@/views/homemain/components/detailInfo')
   },
   data () {
     return {
