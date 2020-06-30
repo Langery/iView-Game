@@ -1,14 +1,14 @@
 <template>
   <div class="detail-info">
-    <p :style="pStyle">User Profile</p>
-      <p :style="pStyle">Personal</p>
+    <p :style="pStyle">组件信息</p>
+      <p :style="pStyle"></p>
       <div class="demo-drawer-profile">
         <Row>
           <Col span="12">
-            Full Name: Aresn
+            Name:
           </Col>
           <Col span="12">
-            Account: aresn@aresn.com
+            Account:
           </Col>
         </Row>
         <Row>
@@ -21,49 +21,32 @@
         </Row>
         <Row>
           <Col span="12">
-            Birthday: May 14, 1991
+            Birthday:
           </Col>
           <Col span="12">
-            Website: <a href="https://dev.iviewui.com" target="_blank">https://dev.iviewui.com</a>
+            Website:
           </Col>
         </Row>
-        Message: Hello, Developer
+        Message:
       </div>
       <Divider />
-      <p :style="pStyle">Company</p>
+      <p :style="pStyle">Other information</p>
       <div class="demo-drawer-profile">
         <Row>
           <Col span="12">
-            Position: Programmer
+            Position:
           </Col>
           <Col span="12">
-            Responsibilities: Coding
-          </Col>
-        </Row>
-        <Row>
-          <Col span="12">
-            Department: Map visualization
-          </Col>
-        </Row>
-        Skills:C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.
-      </div>
-      <Divider />
-      <p :style="pStyle">Contacts</p>
-      <div class="demo-drawer-profile">
-        <Row>
-          <Col span="12">
-            Email: admin@aresn.com
-          </Col>
-          <Col span="12">
-            Phone Number: +86 18888888888
+            Responsibilities:
           </Col>
         </Row>
         <Row>
           <Col span="12">
-            GitHub: <a href="https://github.com/iview/iview" target="_blank">https://github.com/iview/iview</a>
+            Department:
           </Col>
         </Row>
       </div>
+      <Divider />
   </div>
 </template>
 

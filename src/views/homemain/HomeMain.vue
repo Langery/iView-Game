@@ -60,6 +60,7 @@ export default {
       },
       mouseX: 0,
       mouseY: 0,
+      sendMenu: false
     }
   },
   computed: {
@@ -75,7 +76,8 @@ export default {
   },
   methods: {
     collapsedSider () {
-      Bus.$emit('sideMenu', true)
+      this.sendMenu = !this.sendMenu
+      Bus.$emit('sideMenu', this.sendMenu)
     },
     initRight () {
       this.isRight = false

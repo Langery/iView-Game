@@ -9,12 +9,23 @@
 </template>
 
 <script>
+import Bus from '@/common/Bus'
+
 export default {
   components: {
     'Home': () => import('@/views/Home.vue')
   },
-  watch () {
-
+  mounted () {
+    Bus.$on('sideMenu', sideMenu => {
+      var contentMain = document.getElementById('contentMain')
+      if (sideMenu) {
+        contentMain.style.cssText = "width: calc(100% - 78px)"
+      } else {
+        contentMain.style.cssText = "width: calc(100% - 200px)"
+      }
+    })
+  },
+  methods: {
   }
 }
 </script>

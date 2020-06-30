@@ -44,12 +44,12 @@ export default {
     init (id) {
       const self = this
       let [obj, context] = self.getCanvas(id)
-      
+
       console.log(typeof canvasX)
       obj.onclick = (e) => {
         var bbox = obj.getBoundingClientRect()
         var x = e.clientX - bbox.left * (obj.width/bbox.width)
-        var y = e.clientY - bbox.left * (obj.height/bbox.height) + 70
+        var y = e.clientY - bbox.left * (obj.height/bbox.height) + 160
         self.drawIndex++
 
         var sendObj = {

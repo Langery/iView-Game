@@ -1,8 +1,8 @@
 <template>
   <div class="drawer-tool">
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
+    <Card>
+      <p slot="title">组件</p>
+    </Card>
   </div>
 </template>
 

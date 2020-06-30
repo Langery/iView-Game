@@ -72,5 +72,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.collapsed-menu i{
+  transform: translateX(5px);
+  transition: font-size .2s ease .2s, transform .2s ease .2s;
+  vertical-align: middle;
+  font-size: 22px;
+}
 </style>
