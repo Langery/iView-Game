@@ -26,12 +26,21 @@ export default new Router({
       }
     },
     {
+      path: '/gui',
+      name: 'GUI',
+      component: () => import('@/views/gui/GuiMain.vue'),
+      meta: {
+        type: 'GUI',
+        order: '1-4'
+      }
+    },
+    {
       path: '/drawlib',
       name: 'drawlib',
       component: () => import('@/views/drawlib/DrawMain.vue'),
       meta: {
         type: 'drawlib',
-        order: '1-3'
+        order: '1-5'
       }
     },
     {
@@ -40,7 +49,7 @@ export default new Router({
       component: () => import('@/views/me/me'),
       meta: {
         type: 'me',
-        ordre: '1-3'
+        ordre: '1-6'
       }
     }
   ],

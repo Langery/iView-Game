@@ -92,7 +92,7 @@ export default {
           },
           { // 外圈
             type: 'pie',
-            radius: ['55%', '85%'],
+            radius: ['50%', '80%'],
             animation: true,
             label: {
               normal: {

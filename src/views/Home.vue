@@ -42,6 +42,12 @@ export default {
           addr: '/modal'
         },
         {
+          name: 'GUI',
+          type: 'ios-navigate',
+          span: 'GUI',
+          addr: '/gui'
+        },
+        {
           name: 'drawlib',
           type: 'ios-search',
           span: '图库',

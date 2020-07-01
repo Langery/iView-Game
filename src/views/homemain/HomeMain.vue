@@ -18,8 +18,9 @@
       <Drawer title="详细信息" :closable="false" width="640" v-model="inforVal">
         <detail-info></detail-info>
       </Drawer>
+      <!-- 配置区域 -->
       <paramet-data></paramet-data>
-      <Content :style="{margin: '0 4% 24px', padding: '24px', minHeight: '400px', background: '#fff', position: 'relative'}">
+      <Content :style="{margin: '0 4% 24px', z: '24px', minHeight: '450px', background: '#fff', position: 'relative'}">
         <!-- 鼠标右键功能区 -->
         <right-tool
           :style="rightStyle"

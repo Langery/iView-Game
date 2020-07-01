@@ -1,5 +1,5 @@
 <template>
-  <div class="draw-board1">
+  <div class="draw-board">
     <canvas id="canvas" width="500" height="400"></canvas>
   </div>
 </template>
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.draw-board1{
+.draw-board{
   border: 1px solid;
   overflow: hidden;
 }
