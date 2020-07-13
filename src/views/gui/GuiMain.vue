@@ -15,7 +15,28 @@ export default {
       cube: null
     }
   },
+  mounted() {
+    this.init();
+    this.animate()
+  },
   methods: {
+    drawLine () {
+      this.camera.position.set(0, 0, 100)
+      this.camera.lookAt(0, 0, 0)
+
+      var material = new Three.LineBasicMaterial({ color: 0x0000ff })
+
+      var points = []
+      points.push( new Three.Vector3(-10, 0, 0) )
+      points.push( new Three.Vector3(0, 10, 0) )
+      points.push( new Three.Vector3(10, 0, 0) )
+
+      var geometry = new Three.BufferGeometry().setFromPoints(points)
+
+      var line  = new Three.Line(geometry, material)
+      this.scene.add(line)
+      this.renderer.render(this.scene, this.camera)
+    },
     init () {
       this.scene = new Three.Scene()
 
@@ -37,9 +58,8 @@ export default {
 
       this.camera.position.z = 5
 
-
       // GUI.appendChild(this.renderer.domElement);
-
+      this.drawLine()
     },
     animate () {
       requestAnimationFrame(this.animate);
@@ -47,10 +67,6 @@ export default {
       this.cube.rotation.y += 0.01
       this.renderer.render(this.scene, this.camera);
     }
-  },
-  mounted() {
-    this.init();
-    this.animate()
   }
 }
 </script>
