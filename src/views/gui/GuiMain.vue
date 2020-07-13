@@ -20,6 +20,9 @@ export default {
     this.animate()
   },
   methods: {
+    drawText () {
+      
+    },
     drawLine () {
       this.camera.position.set(0, 0, 100)
       this.camera.lookAt(0, 0, 0)
@@ -36,7 +39,8 @@ export default {
       var line  = new Three.Line(geometry, material)
       this.scene.add(line)
       this.renderer.render(this.scene, this.camera)
-      
+
+      this.drawText()
     },
     init () {
       this.scene = new Three.Scene()
