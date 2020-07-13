@@ -36,6 +36,7 @@ export default {
       var line  = new Three.Line(geometry, material)
       this.scene.add(line)
       this.renderer.render(this.scene, this.camera)
+      
     },
     init () {
       this.scene = new Three.Scene()
