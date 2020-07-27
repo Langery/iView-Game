@@ -58,6 +58,12 @@ export default {
           type: 'ios-settings',
           span: '我的',
           addr: '/me'
+        },
+        {
+          name: 'demo',
+          type: 'md-book',
+          span: '测试',
+          addr: '/demo'
         }
       ]
     }
