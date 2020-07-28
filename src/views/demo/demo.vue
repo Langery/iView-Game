@@ -1,5 +1,6 @@
 <template>
   <div class="demo">
+    <Button type="primary" @click="clickPri()">Primary</Button>
     <Tree ref="tree" :render="renderContent" :data="treeData"></Tree>
   </div>
 </template>
@@ -223,6 +224,14 @@ export default {
     }
   },
   methods: {
+    clickPri () {
+      for (let i = 0; i < this.data1.length; i++) {
+        let node = this.data1[i];
+        if(node.title === '太平洋公司——测试账簿1001') {
+          this.$set(this.data1[i], 'selected', true)
+        }
+      }
+    },
     renderContent (h, { root, node, data }) {
       return h('span', {
         class: ['ivu-tree-title'],
