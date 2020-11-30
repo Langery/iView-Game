@@ -14,31 +14,12 @@
 </template>
 
 <script>
+import config from '@/config/index';
+
 export default {
   data () {
     return {
-      menuMap: [
-        {
-          name: '1',
-          type: 'ios-navigate',
-          way: 'Item1'
-        }, 
-        {
-          name: '2',
-          type: 'ios-keypad',
-          way: 'Item2'
-        },
-        {
-          name: '3',
-          type: 'ios-analytics',
-          way: 'Item3'
-        }, 
-        {
-          name: '4',
-          type: 'ios-paper',
-          way: 'Item4'
-        }
-      ]
+      menuMap: config.topMenuMap
     }
   },
   mounted () {

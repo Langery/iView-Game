@@ -21,33 +21,15 @@
 </template>
 
 <script>
-import Bus from '@/common/Bus'
+import Bus from '@/common/Bus';
+import config from '@/config/index';
 
 export default {
   name: 'home',
   data () {
     return {
       isCollapsed: false,
-      leftMap: [
-        {
-          name: '/',
-          type: 'ios-navigate',
-          span: '画板',
-          addr: '/'
-        },
-        {
-          name: 'drawlib',
-          type: 'ios-search',
-          span: '图库',
-          addr: '/drawlib'
-        },
-        {
-          name: 'me',
-          type: 'ios-settings',
-          span: '我的',
-          addr: '/me'
-        }
-      ]
+      leftMap: config.menuMap
     }
   },
   computed: {

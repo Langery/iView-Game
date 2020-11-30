@@ -4,10 +4,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
 
-Vue.use(iView)
+Vue.use(ViewUI)
 Vue.use(Vuex)
 Vue.config.productionTip = false;
 
