@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import * as Three from 'three'
+import Bus from '@/common/Bus';
+import * as Three from 'three';
 
 export default {
   name: 'GUI',
@@ -16,10 +17,19 @@ export default {
     }
   },
   mounted() {
+    Bus.$on('canvas', canvas => {
+      console.log(canvas)
+    })
     this.init();
     this.animate()
   },
   methods: {
+    initData () {
+      this.camera = null
+      this.scene = null
+      this.renderer = null
+      this.cube = null
+    },
     drawText () {
       
     },

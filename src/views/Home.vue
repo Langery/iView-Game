@@ -9,7 +9,7 @@
             :name="item.name"
             :to="item.addr"
           >
-            <router-link :to="item.addr">
+            <router-link :to="item.addr" :key="$route.fullPath">
               <Icon :type="item.type"></Icon>
               <span>{{item.span}}</span>
             </router-link>
@@ -41,12 +41,12 @@ export default {
           span: '模板',
           addr: '/modal'
         },
-        {
-          name: 'GUI',
-          type: 'ios-navigate',
-          span: 'GUI',
-          addr: '/gui'
-        },
+        // {
+        //   name: 'GUI',
+        //   type: 'ios-navigate',
+        //   span: 'GUI',
+        //   addr: '/gui'
+        // },
         {
           name: 'drawlib',
           type: 'ios-search',
@@ -83,7 +83,8 @@ export default {
   },
   methods: {
     turnUrl (e) {
-      this.$router.push(e)
+      this.$router.push(e);
+      Bus.$emit('canvas', e);
     }
   }
 }
