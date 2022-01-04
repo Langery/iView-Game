@@ -20,7 +20,7 @@
       </Drawer>
       <!-- 配置区域 -->
       <paramet-data></paramet-data>
-      <Content :style="{margin: '0 4% 24px', z: '24px', minHeight: '450px', background: '#fff', position: 'relative'}">
+      <Content :style="{margin: '0 4% 24px', z: '24px', minHeight: '450px', background: '#fff', position: 'relative'}" id="Content">
         <!-- 鼠标右键功能区 -->
         <right-tool
           :style="rightStyle"
@@ -84,7 +84,8 @@ export default {
       this.isRight = false
     },
     rightMouse () {
-      document.oncontextmenu = (e) => {
+      const content = document.querySelector("#Content");
+      content.oncontextmenu = (e) => {
         this.initRight()
         var e = event || window.event
         e.preventDefault()
@@ -93,11 +94,12 @@ export default {
         // console.log(e.clientX, e.clientY)
         // 需要同时修改 rightTool.vue 中的位置
         // 同时减去部分 canvas 的位置距离
-        this.rightStyle.left = (e.clientX - 125 - 250) + 'px'
-        this.rightStyle.top = (e.clientY - 50 - 170) + 'px'
+        // console.log(this.mouseX, this.mouseY);
+        this.rightStyle.left = (this.mouseX / 3) + 'px'
+        this.rightStyle.top = (this.mouseY / 4) + 'px'
         this.isRight = true
       }
-      document.onclick = (e) => { this.initRight() }
+      content.onclick = (e) => { this.initRight() }
     }
   }
 }
