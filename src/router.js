@@ -51,6 +51,15 @@ export default new Router({
         type: 'me',
         ordre: '1-6'
       }
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: () => import('@/views/demo/demo'),
+      meta: {
+        type: 'demo',
+        ordre: '1-7'
+      }
     }
   ],
 });
