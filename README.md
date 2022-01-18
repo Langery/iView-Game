@@ -1,4 +1,6 @@
-# iView-Game
+# iView-Game 
+
+&emsp;*- dev 分支*
 
 &emsp;想无聊的时候自己写一个游戏，目前是想基于[iView](https://www.iviewui.com/)写一个游戏。
 
